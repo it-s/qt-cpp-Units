@@ -11,7 +11,7 @@ A small collection of lua functions split into cathegories. Each module is fully
 ##Initializing the module
 * Include it into your Qt project file:
 ```c++
-  include(QtAwesome/QtAwesome.pri)
+  include(qt-cpp-Units/Units.pri)
 ```
 
 ##Using Units in your QML project
