@@ -29,8 +29,12 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 #if (defined(Q_OS_ANDROID) || defined(Q_OS_IOS) || defined(Q_OS_WINPHONE))
-    engine.rootContext()->setContextProperty("U", new Units(qApp->screens().first()->size(), QSize(768,1280)));
+  //If we are running under mobile we want to init system properly
+  // Units(QSize currentResolution, QSize resolutionDesignedFor)
+    engine.rootContext()->setContextProperty("U", new Units(qApp->screens().first()->size(), QSize(320,480)));
 #else
+  //If we are on desktop we just init a blank system
+  //Scaler on blank system is always 1-to-1
     engine.rootContext()->setContextProperty("U", new Units());
 #endif
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
