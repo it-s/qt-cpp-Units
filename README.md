@@ -21,7 +21,7 @@ A small collection of lua functions split into cathegories. Each module is fully
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 
-#include "unit.h"
+#include "units.h"
 
 int main(int argc, char *argv[])
 {
